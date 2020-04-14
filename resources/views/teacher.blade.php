@@ -14,5 +14,21 @@
             </div>
         </div>
     </div>
+    <br><br>
+    <div class="row justify-content-center">
+        <table class="table table-striped">
+            <tbody>
+                <tr class="text-center">
+                    <td>
+                        <a href="{{url('students/show')}}" class="btn btn-success">Students List</a>                       
+                    </td>
+                    <td>
+                        <a href="{{url('student_classes/show')}}" class="btn btn-success">Student Classes List</a>                       
+                    </td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 @endsection

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Studentt;
 use App\Countary;
 use App\State;
+use App\StudentClass;
+
 
 
 
@@ -17,16 +20,18 @@ class StudentsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index()
     {
         //
         // dd('mhvh');
         $students = Studentt::all();
+        // $students = Studentt::with(['StudentClass'])->get();
+
         return view('students.index')->with('students', $students);
     }
 
@@ -39,11 +44,13 @@ class StudentsController extends Controller
     {
         //
         // dd('create');
+        $studentClasses = StudentClass::all();
         $states = State::all();
         $countries = Countary::all();
         return view('students.create')
         ->with('states', $states)
         ->with('countries', $countries)
+        ->with('student_classes', $studentClasses)
         ->with('success','Item Created successfully!');
 
     }
@@ -73,7 +80,8 @@ class StudentsController extends Controller
         $students->address = $request->input('address');
         $students->city = $request->input('city');
         $students->state_id = $request->input('state_id');
-        $students->countary_id = $request->input('countary_id'); 
+        $students->countary_id = $request->input('countary_id');
+        $students->student_class_id = $request->input('student_class_id'); 
         // dd($students);
         $students->save();
         
@@ -89,8 +97,19 @@ class StudentsController extends Controller
      */
     public function show($id)
     {
-        //
+        //dd('show);
+        $students = Studentt::all();
+        return view('students.show')->with('students', $students);
     }
+    // public function show($id)
+    // {
+    //     //
+    //     // dd($student_id);
+    //     // dd('nk');
+    //     $student = Studentt::find($id);
+    //     return view('students.show')->with('student', $student);
+    // }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -137,6 +156,7 @@ class StudentsController extends Controller
         $students->city = $request->input('city');
         $students->state_id = $request->input('state_id');
         $students->countary_id = $request->input('countary_id'); 
+        $students->student_class_id = $request->input('student_class_id');
         $students->save();
         // dd($teachers);
         return redirect('/students')->with('success','Item Updated successfully!');

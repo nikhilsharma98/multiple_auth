@@ -8,7 +8,7 @@
         <thead>
             <tr>
             <th scope="col">ID</th>
-            <th scope="col">First Name/th>
+            <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             {{-- <th scope="col">Password</th> --}}
@@ -17,6 +17,7 @@
             <th scope="col">Aadhar ID</th>
             <th scope="col">Age</th>
             <th scope="col">DOB</th>
+            <th scope="col">DOA</th>
             <th scope="col">Image</th>
             <th scope="col">Gender</th>
             <th scope="col">Address</th>
@@ -29,39 +30,42 @@
         </thead>
         <tbody>
               
-         @foreach ($students as $student)
-            <tr>
-                <td>{{ $student->id }}</td>
-                <td>{{ $student->first_name }}</td>
-                <td>{{ $student->last_name }}</td>
-                <td>{{ $student->email }}</td>
-                {{-- <td>{{ $student->password }}</td> --}}
-                <td>{{ $student->father_name }}</td>
-                <td>{{ $student->mother_name }}</td>
-                <td>{{ $student->aadhar_id }}</td>
-                <td>{{ $student->age }}</td>
-                <td>{{ $student->dob }}</td>
-                <td><img class="rounded" src='{{asset('storage/'.$student->image)}}' height="50px" width="100px"></td>
-                <td>{{ $student->gender }}</td>
-                <td>{{ $student->address }}</td>
-                <td>{{ $student->city }}</td>
-                <td>{{ $student->state->name }}</td>
-                <td>{{ $student->countary->name }}</td>
-                <td>
-                    <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">
-                        Edit
-                    </a>                       
-    
-                    <form class="form-horizontal pull-right" action="{{ URL::route('students.destroy', [$student->id]) }}" method="POST" >
-                            {{ csrf_field() }}
-                        <input type="hidden" name="_method" value="DELETE"/>
-                        <button type="submit" class="btn btn-danger" name="button" onclick="return confirm('Are you sure to delete this record?')">
-                            Delete
-                        </button>
-                    </form>
-                </td>
-            </tr>
-          @endforeach
+            @foreach ($students as $student)
+                <tr>
+                    <td>{{ $student->id }}</td>
+                    <td><a href="{{ route('students.show', $student->id) }}" >
+                        {{ $student->first_name }}
+                    </td>
+                    <td>{{ $student->last_name }}</td>
+                    <td>{{ $student->email }}</td>
+                    {{-- <td>{{ $student->password }}</td> --}}
+                    <td>{{ $student->father_name }}</td>
+                    <td>{{ $student->mother_name }}</td>
+                    <td>{{ $student->aadhar_id }}</td>
+                    <td>{{ $student->age }}</td>
+                    <td>{{ $student->dob }}</td>
+                    <td>{{ $student->doa }}</td>
+                    <td><img class="rounded" src='{{asset('storage/'.$student->image)}}' height="50px" width="100px"></td>
+                    <td>{{ $student->gender }}</td>
+                    <td>{{ $student->address }}</td>
+                    <td>{{ $student->city }}</td>
+                    <td>{{ $student->state->name }}</td>
+                    <td>{{ $student->countary->name }}</td>
+                    <td>
+                        <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">
+                            Edit
+                        </a>                       
+
+                        <form class="form-horizontal pull-right" action="{{ URL::route('students.destroy', [$student->id]) }}" method="POST" >
+                                {{ csrf_field() }}
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            <button type="submit" class="btn btn-danger" name="button" onclick="return confirm('Are you sure to delete this record?')">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
       </table>
 </div>

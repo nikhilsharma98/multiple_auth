@@ -4,17 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Teacherr extends Model
+class StudentClass extends Model
 {
     //
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'address', 'age', 'experience', 'aadhar_id','dob', 'gender',
+        'class', 'section',
     ];
 
-    public function studentClass()
+    public function Teacher()
     {
-        return $this->hasMany('App\studentClass');
+        return $this->belongsTo('App\Teacher');
     }
+
     public function teacherStudentclass()
     {
         return $this->hasMany('App\TeacherStudentClass');

@@ -6,6 +6,8 @@
         <hr> 
         <form action="{{ URL::route('students.update', $student->id) }}" method="POST" enctype="multipart/form-data" data-toggle="validator" role="form">
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" id="food_id" name="food_id" value="">
+
             {{ csrf_field() }}
 
 
@@ -60,6 +62,12 @@
             <div class="form-group">
                 <label for="dob" class="col-md-4 control-label">DOB</label>
                 <input type="date" value="{{$student->dob}}" class="form-control" name="dob" data-error="DOB Id Is Required." id="dob" placeholder="Aadhar Id" required>
+                <div class="text-danger help-block with-errors"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="doa" class="col-md-4 control-label">DOA</label>
+                <input type="date" value="{{$student->doa}}" class="form-control" name="dob" data-error="DOA Id Is Required." id="doa" placeholder="DOA" required>
                 <div class="text-danger help-block with-errors"></div>
             </div>
 

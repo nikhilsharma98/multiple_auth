@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\Teacherr;
+use App\StudentClass;
+use App\TeacherStudentClass;
+
+
 
 
 class TeachersController extends Controller
@@ -37,6 +42,31 @@ class TeachersController extends Controller
     {
         //
         return view('teachers.create')->with('success','Item Created successfully!');
+    }
+
+    public function createStudentClass(Request $request, $teacher_id)
+    {
+        // dd('nnn');
+        // dd($request->all());
+        // dd($teacher_id);
+        $student_classes = StudentClass::all();
+        $teachers = Teacherr::all();
+        return view('teachers.createstudentclass')
+        ->with('student_classes', $student_classes)
+        ->with('teacher_id', $teacher_id);
+    }
+
+    public function storeStudentClass(Request $request)
+    {
+        // dd($request->all());
+        
+        $data = new TeacherStudentClass;
+        $data->teacher_id = $request->input('teacher_id');
+        $data->student_class_id = $request->input('student_class_id');
+        // dd($data);
+        $data->save();
+    
+        return redirect('teachers/'.$request->input('student_class_id'));
     }
 
     /**
@@ -73,9 +103,21 @@ class TeachersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    // public function show($id)
+    // {
+    //     //dd('show);
+    //     $teachers = Teacherr::all();
+    //     // dd($studentClasses);
+    //     return view('teachers.show')->with('teachers', $teachers);
+    // }
+
+    public function show($teacher_id)
     {
         //
+        // dd($teacher_id);    
+        $teacher = Teacherr::find($teacher_id);
+        // dd($teacher);
+        return view('teachers.show')->with('teacher', $teacher);
     }
 
     /**

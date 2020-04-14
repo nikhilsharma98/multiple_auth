@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Auth;
 use App\Adminn;
+
 
 
 class AdminsController extends Controller
@@ -14,16 +16,17 @@ class AdminsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index()
     {
         //
         // dd('mhvh');
         $admins = Adminn::all();
+        // dd($admins);
         return view('admins.index')->with('admins', $admins);
     }
 

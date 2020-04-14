@@ -5,7 +5,9 @@
         <h1>Create Student</h1>
         <hr>
         <form action="{{route('students.store')}}" method="post" enctype="multipart/form-data" data-toggle="validator" role="form">
-        {{ csrf_field() }}
+            <input type="hidden" id="student_class_id" name="student_class_id" value="{{Session::token()}}">
+
+            {{ csrf_field() }}
             
 
             <div class="form-group">
@@ -63,6 +65,12 @@
             </div>
 
             <div class="form-group">
+                <label for="doa" class="col-md-4 control-label">DOA</label>
+                <input type="date" class="form-control" name="doa" data-error="DOA Id Is Required." id="doa" placeholder="DOA" required>
+                <div class="text-danger help-block with-errors"></div>
+            </div>
+
+            <div class="form-group">
                 <label for="image" class="col-md-4 control-label">Image</label>
                 <input type="file" class="form-control" name="image" data-error="Image Is Required." id="image" placeholder="Image" required>
                 <div class="text-danger help-block with-errors"></div>
@@ -113,7 +121,17 @@
                 </select>
                 <div class="text-danger help-block with-errors"></div>
             </div>
- 
+            
+            <div class="form-group">
+                <label for="class" class="col-md-4 control-label">Class</label>
+                <select name="class" class="form-control" data-error="Class Is Required." id="name" required>
+                    <option>Choose Class</option> 
+                    @foreach($student_classes as $student_class)
+                    <option value="{{ $student_class->id }}">{{ $student_class->class }}</option>
+                    @endforeach
+                </select>
+                <div class="text-danger help-block with-errors"></div>
+            </div>
 
             <button type="submit" class="col-md-8 offset-md-2 btn btn-success">Submit</button>
         </form>

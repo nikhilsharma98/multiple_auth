@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="container">
-    <h1>Teachers</h1>    
+    <h2>Teacher List</h2><br><br>
+
     <a href="{{route('teachers.create')}}" class="btn btn-success">Create Teacher</a><br><br>
+
+    <a href="{{ url('teachers/create/' . $teacher->id)}}" class="btn btn-success" role="button">Teacher Detail</a>
+    
     <table class="table table-striped">
         <thead>
             <tr>
@@ -24,14 +28,10 @@
         </thead>
         <tbody>
               
-            @foreach ($teachers as $teacher)
+            {{-- @foreach ($teachers as $teacher) --}}
                 <tr>
                     <td>{{ $teacher->id }}</td>
-                    <td>
-                        <a href="{{ route('teachers.show', $teacher->id) }}" >
-                        {{ $teacher->first_name }}
-                    </td>
-                    
+                    <td>{{ $teacher->first_name }}</td>
                     <td>{{ $teacher->last_name }}</td>
                     <td>{{ $teacher->email }}</td>
                     {{-- <td>{{ $teacher->password }}</td> --}}
@@ -41,7 +41,7 @@
                     <td>{{ $teacher->aadhar_id }}</td>
                     <td>{{ $teacher->dob }}</td>
                     <td>{{ $teacher->gender }}</td>
-                    <td>
+                    {{-- <td>
                         <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-primary">
                             Edit
                         </a>                       
@@ -53,10 +53,12 @@
                                 Delete
                             </button>
                         </form>
-                    </td>
+                    </td> --}}
                 </tr>
-            @endforeach
+            {{-- @endforeach --}}
         </tbody>
-      </table>
+      </table>                      
 </div>
 @endsection
+
+

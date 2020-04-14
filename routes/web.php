@@ -45,3 +45,9 @@ Route::view('/student', 'student');
 Route::resource('admins', 'AdminsController');
 Route::resource('teachers', 'TeachersController');
 Route::resource('students', 'StudentsController');
+Route::resource('student_classes', 'StudentClassesController');
+Route::resource('student_works', 'StudentWorksController');
+
+
+Route::get('/teachers/create/{id}', 'TeachersController@createStudentClass');
+Route::post('/teachers/storestudentclass', 'TeachersController@storeStudentClass');

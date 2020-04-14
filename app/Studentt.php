@@ -8,7 +8,7 @@ class Studentt extends Model
 {
     //
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'father_name', 'mother_name', 'aadhar_id', 'age','dob', 'image', 'gender','address', 'state_id','countary_id',
+        'first_name', 'last_name', 'email', 'password', 'father_name', 'mother_name', 'aadhar_id', 'age','dob', 'image', 'gender','address', 'state_id','countary_id', 'student_class_id',
     ];
 
 
