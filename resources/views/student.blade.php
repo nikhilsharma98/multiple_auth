@@ -1,5 +1,5 @@
 
-@extends('layouts.auth')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -23,6 +23,9 @@
                         <a href="{{url('students/show')}}" class="btn btn-success">Students List</a>                       
                     </td>
                     
+                    <td>
+                        <a href="{{url('student_works/show')}}" class="btn btn-success">Students Work List</a>                       
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // for getting menus
-    $('#food_name').change(function(){
-        $('#food_id').val($(this).children('option:selected').val());
+    $('#class').change(function(){
+        $('#student_class_id').val($(this).children('option:selected').val());
     });
 });

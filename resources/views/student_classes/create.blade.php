@@ -9,9 +9,9 @@
             <input type="hidden" id="teacher_id" name="teacher_id" value="">
 
 
-            <div class="form-group">
-                <label for="title" class="col-md-4 control-label">Class</label>
-                {{-- <input type="title" class="form-control" name="title" data-error="Title Is Required." id="title" placeholder="Title" required> --}}
+            {{-- <div class="form-group">
+                <label for="class" class="col-md-4 control-label">Class</label>
+                <input type="title" class="form-control" name="title" data-error="Title Is Required." id="title" placeholder="Title" required>
                 <select name="class" class="form-control" data-error="Class Is Required." id="class" placeholder="Class" required />
                     <option value="">----Select-----</option>
                     <option value="First">First</option>
@@ -19,6 +19,19 @@
                     <option value="Third">Third</option>
                     <option value="Fourth">Fourth</option> 
                     <option value="Fifth">Fifth</option>
+                </select>
+                <div class="text-danger help-block with-errors"></div>
+            </div> --}}
+
+            <div class="form-group">
+                <label for="class" class="col-md-4 control-label">Class</label>
+                <select name="class" class="form-control" data-error="Class Is Required." id="name" placeholder="Class" required />
+                    <option value="">----Select-----</option>
+                    <option value="First">First</option>
+                    <option value="Second">Second</option> 
+                    <option value="Third">Third</option> 
+                    <option value="Fourth">Fourth</option>
+                    <option value="Fifth">Fifth</option>   
                 </select>
                 <div class="text-danger help-block with-errors"></div>
             </div>

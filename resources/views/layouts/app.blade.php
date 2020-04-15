@@ -48,13 +48,13 @@
    
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/student_class_id.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/jquery.validate.min.js') }}"></script>
     <script src="{{ asset('js/additional-methods.min.js') }}"></script>
-    <script src="{{ asset('js/restaurants.js') }}"></script>
+    <script src="{{ asset('js/teacher_work_id.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/restaurant_id.js') }}"></script>
+    <script src="{{ asset('js/teacher_student_class_id.js') }}"></script>
+    <script src="{{ asset('js/student_class_id.js') }}"></script>
+
 
     
 </body>

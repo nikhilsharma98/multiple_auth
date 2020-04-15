@@ -10,8 +10,8 @@
             <th scope="col">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
+            <th scope="col">Class</th>
             <th scope="col">Email</th>
-            {{-- <th scope="col">Password</th> --}}
             <th scope="col">Address</th>
             <th scope="col">Age</th>
             <th scope="col">Experience</th>
@@ -33,14 +33,20 @@
                     </td>
                     
                     <td>{{ $teacher->last_name }}</td>
+                    <td>{{ $teacher->student_class->class }}
+                        {{ $teacher->student_class->section }}</td>
                     <td>{{ $teacher->email }}</td>
-                    {{-- <td>{{ $teacher->password }}</td> --}}
                     <td>{{ $teacher->address }}</td>
                     <td>{{ $teacher->age }}</td>
                     <td>{{ $teacher->experience }}</td>
                     <td>{{ $teacher->aadhar_id }}</td>
                     <td>{{ $teacher->dob }}</td>
                     <td>{{ $teacher->gender }}</td>
+                    {{-- <td>
+                        @foreach ($teacher->student_class as $student_class)
+                            {{ $student_class->title }}{{ $student_class->section }}
+                        @endforeach 
+                    </td> --}}
                     <td>
                         <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-primary">
                             Edit

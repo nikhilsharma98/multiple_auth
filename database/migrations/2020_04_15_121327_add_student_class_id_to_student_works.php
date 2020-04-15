@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddStudentClassIdToStudentts extends Migration
+class AddStudentClassIdToStudentWorks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class AddStudentClassIdToStudentts extends Migration
      */
     public function up()
     {
-        Schema::table('studentts', function (Blueprint $table) {
+        Schema::table('student_works', function (Blueprint $table) {
             //
             $table->integer('student_class_id');
-
         });
     }
 
@@ -27,10 +26,9 @@ class AddStudentClassIdToStudentts extends Migration
      */
     public function down()
     {
-        Schema::table('studentts', function (Blueprint $table) {
+        Schema::table('student_works', function (Blueprint $table) {
             //
             $table->dropColumn('student_class_id');
-
         });
     }
 }

@@ -75,13 +75,14 @@ class StudentsController extends Controller
         $students->aadhar_id = $request->input('aadhar_id');
         $students->age = $request->input('age');
         $students->dob = $request->input('dob');
+        $students->doa = $request->input('doa');
         $students->image = $request->file('image')->store('Student','public');
         $students->gender = $request->input('gender');
         $students->address = $request->input('address');
         $students->city = $request->input('city');
         $students->state_id = $request->input('state_id');
         $students->countary_id = $request->input('countary_id');
-        $students->student_class_id = $request->input('student_class_id'); 
+        $students->student_class_id = $request->input('student_class_id');
         // dd($students);
         $students->save();
         
@@ -140,6 +141,7 @@ class StudentsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        // dd($request->all());
         $students = Studentt::find($id);
         $students->first_name = $request->input('first_name');
         $students->last_name = $request->input('last_name');
@@ -150,6 +152,7 @@ class StudentsController extends Controller
         $students->aadhar_id = $request->input('aadhar_id');
         $students->age = $request->input('age');
         $students->dob = $request->input('dob');
+        $students->doa = $request->input('doa');
         $students->image = $request->file('image')->store('Student','public');
         $students->gender = $request->input('gender');
         $students->address = $request->input('address');
@@ -157,6 +160,7 @@ class StudentsController extends Controller
         $students->state_id = $request->input('state_id');
         $students->countary_id = $request->input('countary_id'); 
         $students->student_class_id = $request->input('student_class_id');
+        // dd($students);
         $students->save();
         // dd($teachers);
         return redirect('/students')->with('success','Item Updated successfully!');

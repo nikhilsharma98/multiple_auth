@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\StudentClass;
 use App\Teacherr;
+use App\StudentClassStudent;
+use App\Studentt;
+use App\StudentWork;
+
 
 class StudentClassesController extends Controller
 {
@@ -62,12 +66,20 @@ class StudentClassesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // public function show($id)
+    // {
+    //     // dd('show');
+    //     $studentClasses = StudentClass::all();
+    //     return view('student_classes.show')->with('student_classes', $studentClasses);
+    // }
+
     public function show($id)
     {
-        //dd('show);
-        $studentClasses = StudentClass::all();
-        // dd($studentClasses);
-        return view('student_classes.show')->with('student_classes', $studentClasses);
+        // dd($id);
+        // dd('m');
+        $student_class = StudentClass::find($id);
+        
+        return view('student_classes.show')->with('student_class', $student_class);
     }
 
     /**

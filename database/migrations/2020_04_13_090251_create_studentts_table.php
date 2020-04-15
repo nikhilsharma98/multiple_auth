@@ -24,6 +24,7 @@ class CreateStudenttsTable extends Migration
             $table->string('aadhar_id');
             $table->string('age');
             $table->string('dob');
+            $table->string('doa');
             $table->string('image');
             $table->string('gender');
             $table->string('address');

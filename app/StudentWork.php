@@ -8,6 +8,11 @@ class StudentWork extends Model
 {
     //
     protected $fillable = [
-        'title', 'description', 
+        'title', 'description', 'student_class_id', 
     ];
+
+    public function student_class()
+    {
+        return $this->belongsTo('App\StudentClass');
+    }
 }

@@ -6,6 +6,8 @@
         <hr> 
         <form action="{{ URL::route('teachers.update', $teacher->id) }}" method="POST" enctype="multipart/form-data" data-toggle="validator" role="form">
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" id="student_class_id" name="student_class_id" value="">
+
             {{ csrf_field() }}
 
 

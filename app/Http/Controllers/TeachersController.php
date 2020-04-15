@@ -7,7 +7,7 @@ use Auth;
 use App\Teacherr;
 use App\StudentClass;
 use App\TeacherStudentClass;
-
+use App\StudentWork;
 
 
 
@@ -41,7 +41,10 @@ class TeachersController extends Controller
     public function create()
     {
         //
-        return view('teachers.create')->with('success','Item Created successfully!');
+        $student_classes = StudentClass::all();
+        return view('teachers.create')
+        ->with('student_classes', $student_classes)
+        ->with('success','Item Created successfully!');
     }
 
     public function createStudentClass(Request $request, $teacher_id)
@@ -51,9 +54,11 @@ class TeachersController extends Controller
         // dd($teacher_id);
         $student_classes = StudentClass::all();
         $teachers = Teacherr::all();
+        $studentWorks = StudentWork::all();
         return view('teachers.createstudentclass')
         ->with('student_classes', $student_classes)
-        ->with('teacher_id', $teacher_id);
+        ->with('teacher_id', $teacher_id)
+        ->with('student_works', $studentWorks);
     }
 
     public function storeStudentClass(Request $request)
@@ -63,6 +68,7 @@ class TeachersController extends Controller
         $data = new TeacherStudentClass;
         $data->teacher_id = $request->input('teacher_id');
         $data->student_class_id = $request->input('student_class_id');
+        $data->work_id = $request->input('work_id');
         // dd($data);
         $data->save();
     
@@ -90,6 +96,7 @@ class TeachersController extends Controller
         $teachers->aadhar_id = $request->input('aadhar_id');
         $teachers->dob = $request->input('dob');
         $teachers->gender = $request->input('gender');
+        $teachers->student_class_id = $request->input('student_class_id');
         // dd($teachers);
         $teachers->save();
         

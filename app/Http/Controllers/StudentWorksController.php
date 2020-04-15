@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\StudentWork;
+use App\StudentClass;
 
 
 class StudentWorksController extends Controller
@@ -28,7 +29,10 @@ class StudentWorksController extends Controller
     public function create()
     {
         //
-        return view('student_works.create')->with('success','Item Created successfully!');
+        $student_classes = StudentClass::all();
+        return view('student_works.create')
+        ->with('student_classes', $student_classes)
+        ->with('success','Item Created successfully!');
 
     }
 
@@ -41,9 +45,12 @@ class StudentWorksController extends Controller
     public function store(Request $request)
     {
         //
+        // dd($request->all());
         $studentWorks = new StudentWork;
         $studentWorks->title = $request->input('title');
         $studentWorks->description = $request->input('description');
+        $studentWorks->student_class_id = $request->input('student_class_id');
+        // dd($studentWorks);
         $studentWorks->save();
         
         // dd($student_classes);

@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Student Works List</h2><br><br>
 
-    {{-- <a href={{route('student_classes.index')}} class="btn btn-success">Menu</a><br><br> --}}
+    {{-- <a href="{{route('student_works.create')}}" class="btn btn-success">Create Student Work</a><br><br> --}}
     
     <table class="table table-striped">
         <thead>
@@ -12,6 +12,7 @@
                 <th scope="col">ID</th>
                 <th scope="col">Title</th>
                 <th scope="col">Description</th>
+                <th scope="col">Date</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -21,6 +22,7 @@
                     <td>{{ $student_work->id }}</td>
                     <td>{{ $student_work->title }}</td>
                     <td>{{ $student_work->description }}</td>
+                    <td>{{ $student_work->created_at }}</td>
                     <td>
                         <a href="{{ route('student_works.edit', $student_work->id) }}" class="btn btn-primary">
                             Edit

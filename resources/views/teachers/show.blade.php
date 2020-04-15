@@ -6,7 +6,7 @@
 
     <a href="{{route('teachers.create')}}" class="btn btn-success">Create Teacher</a><br><br>
 
-    <a href="{{ url('teachers/create/' . $teacher->id)}}" class="btn btn-success" role="button">Teacher Detail</a>
+    <a href="{{ url('teachers/create/' . $teacher->id)}}" class="btn btn-success" role="button">Assign Class & Work</a><br><br>
     
     <table class="table table-striped">
         <thead>

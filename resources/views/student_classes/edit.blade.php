@@ -9,9 +9,9 @@
             {{ csrf_field() }}
 
 
-            <div class="form-group">
+            {{-- <div class="form-group">
                 <label for="class" class="col-md-4 control-label">Class</label>
-                {{-- <input type="title" value="{{$student_class->title}}" class="form-control" name="title" data-error="Title Is Required." id="title" placeholder="Title" required> --}}
+                <input type="title" value="{{$student_class->title}}" class="form-control" name="title" data-error="Title Is Required." id="title" placeholder="Title" required>
                 <select name="class" class="form-control" data-error="Class Is Required." id="class" placeholder="Class" required />
                     <option value="First" @if ($student_class->class == 0) selected @endif>First</option>
                     <option value="Second" @if ($student_class->class == 1) selected @endif>Second</option>
@@ -20,6 +20,18 @@
                     <option value="Fifth" @if ($student_class->class == 4) selected @endif>Fifth</option>
                 </select>
 
+                <div class="text-danger help-block with-errors"></div>
+            </div> --}}
+
+            <div class="form-group">
+                <label for="class" class="col-md-4 control-label">Class</label>
+                <select name="class" class="form-control" data-error="Class Is Required." id="class" placeholder="Class" required />
+                    <option value="First" @if ($student_class->class == 0) selected @endif>First</option>
+                    <option value="Second" @if ($student_class->class == 1) selected @endif>Second</option>
+                    <option value="Third" @if ($student_class->class == 2) selected @endif>Third</option>
+                    <option value="Fourth" @if ($student_class->class == 3) selected @endif>Fourth</option>
+                    <option value="Fifth" @if ($student_class->class == 4) selected @endif>Fourth</option>
+                </select>
                 <div class="text-danger help-block with-errors"></div>
             </div>
 

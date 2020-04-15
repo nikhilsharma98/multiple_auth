@@ -5,7 +5,7 @@
         <h1>Create Student</h1>
         <hr>
         <form action="{{route('students.store')}}" method="post" enctype="multipart/form-data" data-toggle="validator" role="form">
-            <input type="hidden" id="student_class_id" name="student_class_id" value="{{Session::token()}}">
+            <input type="hidden" id="student_class_id" name="student_class_id" value="">
 
             {{ csrf_field() }}
             
@@ -124,7 +124,7 @@
             
             <div class="form-group">
                 <label for="class" class="col-md-4 control-label">Class</label>
-                <select name="class" class="form-control" data-error="Class Is Required." id="name" required>
+                <select name="class" class="form-control" data-error="Class Is Required." id="class" required>
                     <option>Choose Class</option> 
                     @foreach($student_classes as $student_class)
                     <option value="{{ $student_class->id }}">{{ $student_class->class }}</option>

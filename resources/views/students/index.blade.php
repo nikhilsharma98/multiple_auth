@@ -10,8 +10,8 @@
             <th scope="col">ID</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
+            <th scope="col">Class</th>
             <th scope="col">Email</th>
-            {{-- <th scope="col">Password</th> --}}
             <th scope="col">Father Name</th>
             <th scope="col">Mother Name</th>
             <th scope="col">Aadhar ID</th>
@@ -37,6 +37,8 @@
                         {{ $student->first_name }}
                     </td>
                     <td>{{ $student->last_name }}</td>
+                    <td>{{ $student->student_class->class }}
+                        {{ $student->student_class->section }}</td>
                     <td>{{ $student->email }}</td>
                     {{-- <td>{{ $student->password }}</td> --}}
                     <td>{{ $student->father_name }}</td>
@@ -51,6 +53,7 @@
                     <td>{{ $student->city }}</td>
                     <td>{{ $student->state->name }}</td>
                     <td>{{ $student->countary->name }}</td>
+                    
                     <td>
                         <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary">
                             Edit
@@ -70,3 +73,5 @@
       </table>
 </div>
 @endsection
+
+

@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Students List</h2><br><br>
 
-{{-- <a href={{route('student_classes.index')}} class="btn btn-success">Menu</a><br><br> --}}    
+    <a href="{{route('students.create')}}" class="btn btn-success">Create Student</a><br><br>   
 <table class="table table-striped">
     <thead>
         <tr>

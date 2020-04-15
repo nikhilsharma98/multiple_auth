@@ -5,7 +5,9 @@
         <h1>Create Teacher</h1>
         <hr>
         <form action="{{route('teachers.store')}}" method="post" enctype="multipart/form-data" data-toggle="validator" role="form">
-        {{ csrf_field() }}
+            <input type="hidden" id="student_class_id" name="student_class_id" value="">
+
+            {{ csrf_field() }}
             
 
             <div class="form-group">
@@ -71,7 +73,17 @@
                 </div>
                 <div class="text-danger help-block with-errors"></div>
             </div>
- 
+            
+            <div class="form-group">
+                <label for="class" class="col-md-4 control-label">Class</label>
+                <select name="class" class="form-control" data-error="Class Is Required." id="class" required>
+                    <option>Choose Class</option> 
+                    @foreach($student_classes as $student_class)
+                    <option value="{{ $student_class->id }}">{{ $student_class->class }}</option>
+                    @endforeach
+                </select>
+                <div class="text-danger help-block with-errors"></div>
+            </div>
 
             <button type="submit" class="col-md-8 offset-md-2 btn btn-success">Submit</button>
         </form>

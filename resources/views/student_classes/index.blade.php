@@ -10,6 +10,8 @@
             <th scope="col">ID</th>
             <th scope="col">Class</th>
             <th scope="col">Section</th>
+            <th scope="col">Teacher Name</th>
+            {{-- <th scope="col">Student Work</th> --}}
             <th scope="col">Action</th>
             </tr>
         </thead>
@@ -24,6 +26,18 @@
                     </td>
                     <td>{{ $student_class->section }}</td>
                     
+                    <td>
+                        @foreach ($student_class->teacher as $teacher)
+                            {{ $teacher->first_name }} {{ $teacher->last_name }}
+                        @endforeach 
+                    </td>
+                    {{-- <td>
+                        @foreach ($student_class->student_work as $student_work)
+                            {{ $student_work->title }}{{ $student_work->description }}
+                        @endforeach 
+                    </td> --}}
+                    
+                        
                     <td>
                         <a href="{{ route('student_classes.edit', $student_class->id) }}" class="btn btn-primary">
                             Edit
