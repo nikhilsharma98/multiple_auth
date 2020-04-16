@@ -26,4 +26,9 @@ class Studentt extends Model
         return $this->belongsTo('App\StudentClass');
     }
 
+    public function student_work()
+    {
+        return $this->hasMany('App\StudentWork');
+    }
+
 }

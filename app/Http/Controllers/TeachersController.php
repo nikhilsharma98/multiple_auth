@@ -8,6 +8,7 @@ use App\Teacherr;
 use App\StudentClass;
 use App\TeacherStudentClass;
 use App\StudentWork;
+use App\Studentt;
 
 
 
@@ -55,10 +56,12 @@ class TeachersController extends Controller
         $student_classes = StudentClass::all();
         $teachers = Teacherr::all();
         $studentWorks = StudentWork::all();
+        $students = Studentt::all();
         return view('teachers.createstudentclass')
         ->with('student_classes', $student_classes)
         ->with('teacher_id', $teacher_id)
-        ->with('student_works', $studentWorks);
+        ->with('student_works', $studentWorks)
+        ->with('students', $students);
     }
 
     public function storeStudentClass(Request $request)

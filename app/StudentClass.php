@@ -21,9 +21,9 @@ class StudentClass extends Model
         return $this->hasMany('App\TeacherStudentClass');
     }
 
-    public function Studentt()
+    public function student()
     {
-        return $this->hasMany('App\students');
+        return $this->hasMany('App\Studentt');
     }
 
     public function teacher()

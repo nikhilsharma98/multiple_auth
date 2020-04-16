@@ -96,20 +96,20 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //dd('show);
-        $students = Studentt::all();
-        return view('students.show')->with('students', $students);
-    }
     // public function show($id)
     // {
-    //     //
-    //     // dd($student_id);
-    //     // dd('nk');
-    //     $student = Studentt::find($id);
-    //     return view('students.show')->with('student', $student);
+    //     //dd('show);
+    //     $students = Studentt::all();
+    //     return view('students.show')->with('students', $students);
     // }
+    public function show($id)
+    {
+        //
+        // dd($student_id);
+        // dd('nk');
+        $student = Studentt::find($id);
+        return view('students.show')->with('student', $student);
+    }
     
 
     /**

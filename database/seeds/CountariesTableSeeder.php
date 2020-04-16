@@ -12,6 +12,7 @@ class CountariesTableSeeder extends Seeder
     public function run()
     {
         //
+        
         DB::table('countaries')->insert(
             [
                 ['name' => 'USA', 'short_code' => 'USA'],

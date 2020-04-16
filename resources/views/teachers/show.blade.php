@@ -2,28 +2,27 @@
 
 @section('content')
 <div class="container">
-    <h2>Teacher List</h2><br><br>
+    <h2>Teacher List</h2><br>
 
     <a href="{{route('teachers.create')}}" class="btn btn-success">Create Teacher</a><br><br>
-
+    <a href="{{route('students.create')}}" class="btn btn-success">Add Student</a><br><br>
     <a href="{{ url('teachers/create/' . $teacher->id)}}" class="btn btn-success" role="button">Assign Class & Work</a><br><br>
     
     <table class="table table-striped">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Email</th>
-            {{-- <th scope="col">Password</th> --}}
-            <th scope="col">Address</th>
-            <th scope="col">Age</th>
-            <th scope="col">Experience</th>
-            <th scope="col">Aadhar ID</th>
-            <th scope="col">DOB</th>
-            <th scope="col">Gender</th>
-            <th scope="col">Action</th>
-            
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                {{-- <th scope="col">Password</th> --}}
+                <th scope="col">Address</th>
+                <th scope="col">Age</th>
+                <th scope="col">Experience</th>
+                <th scope="col">Aadhar ID</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>

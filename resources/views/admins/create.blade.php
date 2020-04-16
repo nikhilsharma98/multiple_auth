@@ -5,7 +5,7 @@
         <h1>Create Admin</h1>
         <hr>
         <form action="{{route('admins.store')}}" method="post" enctype="multipart/form-data" data-toggle="validator" role="form">
-        {{ csrf_field() }}
+            {{ csrf_field() }}
             
 
             <div class="form-group">

@@ -56,8 +56,6 @@
         </h1>
     </div>
   
-
-    
     <table class="table table-striped">
         <thead>
             <tr>

@@ -54,6 +54,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
     <script src="{{ asset('js/teacher_student_class_id.js') }}"></script>
     <script src="{{ asset('js/student_class_id.js') }}"></script>
+    <script src="{{ asset('js/studentt_id.js') }}"></script>
 
 
     

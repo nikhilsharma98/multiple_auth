@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group">
-                <label for="title" class="col-md-4 control-label">title</label>
+                <label for="title" class="col-md-4 control-label">Work</label>
                 {{-- <input type="first_name" class="form-control" name="first_name" data-error="First Name Is Required." id="first_name" placeholder="First Name" required> --}}
                 <select name="title" class="form-control"  data-error="Title Is Required." id="title" placeholder="Title" required>
                             
@@ -52,51 +52,3 @@
     </div>
 </div>
 @endsection
-
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="col-md-12">
-    <h2>Assign Class</h2>
-    <form class="form-horizontal" id="teachers"  method="POST" action="{{ url('teachers/storestudentclass') }}"  novalidate>
-        {{ csrf_field() }}
-
-        <div class="form-group{{ $errors->has('student_class') ? ' has-error' : '' }}">
-                <label for="student_class" class="col-md-4 control-label">Student Class </label>
-    
-                <div class="col-md-6">
-                 
-                    <select name="student_class_id">
-                            
-                        <option value="">----Select-----</option>
-                        @foreach($student_classes as $student_class)
-                            <option value="{{$student_class->id}}">{{$student_class->title}} {{$student_class->section}}</option>
-                             
-                        @endforeach
-                        
-                    </select>
-                    @if ($errors->has('student_class'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('student_class') }}</strong>
-                        </span>
-                    @endif
-                </div>
-        </div>
-
-           <div class="form-group"> 
-            <input type="hidden"  name="teacher_id" value="{{$teacher_id}}">        
-        </div>
-
-        
-       
-
-        <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                    Save
-                </button>
-            </div>
-        </div>
-    </form>
-</div>
-@endsection --}}

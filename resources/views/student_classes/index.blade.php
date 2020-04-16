@@ -7,12 +7,13 @@
     <table class="table table-striped">
         <thead>
             <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Class</th>
-            <th scope="col">Section</th>
-            <th scope="col">Teacher Name</th>
-            {{-- <th scope="col">Student Work</th> --}}
-            <th scope="col">Action</th>
+                <th scope="col">ID</th>
+                <th scope="col">Class</th>
+                <th scope="col">Section</th>
+                <th scope="col">Teacher Name</th>
+                <th scope="col">Student Name</th>
+                {{-- <th scope="col">Student Work</th> --}}
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -31,11 +32,13 @@
                             {{ $teacher->first_name }} {{ $teacher->last_name }}
                         @endforeach 
                     </td>
-                    {{-- <td>
-                        @foreach ($student_class->student_work as $student_work)
-                            {{ $student_work->title }}{{ $student_work->description }}
+                    <td>
+                        @foreach ($student_class->student as $student)
+                            {{ $student->first_name }} {{ $student->last_name }}
                         @endforeach 
-                    </td> --}}
+                    </td>
+                    {{-- <td>{{ $student_class->student->first_name }}
+                        {{ $student_class->student->last_name }}</td> --}}
                     
                         
                     <td>

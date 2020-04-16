@@ -6,6 +6,7 @@
         <hr>
         <form action="{{route('student_works.store')}}" method="post" enctype="multipart/form-data" data-toggle="validator" role="form">
             <input type="hidden" id="student_class_id" name="student_class_id" value="">
+            <input type="hidden" id="studentt_id" name="studentt_id" value="">
             {{ csrf_field() }}
             
 
@@ -27,6 +28,17 @@
                     <option>Choose Class</option> 
                     @foreach($student_classes as $student_class)
                     <option value="{{ $student_class->id }}">{{ $student_class->class }}</option>
+                    @endforeach
+                </select>
+                <div class="text-danger help-block with-errors"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="name" class="col-md-4 control-label">Student Name</label>
+                <select name="name" class="form-control" data-error="Class Is Required." id="name" required>
+                    <option>Choose Class</option> 
+                    @foreach($students as $student)
+                    <option value="{{ $student->id }}">{{ $student->first_name }} {{ $student->last_name }}</option>
                     @endforeach
                 </select>
                 <div class="text-danger help-block with-errors"></div>

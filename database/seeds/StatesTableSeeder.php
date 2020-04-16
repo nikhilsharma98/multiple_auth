@@ -12,6 +12,7 @@ class StatesTableSeeder extends Seeder
     public function run()
     {
         //
+        
         DB::table('states')->insert(
             [
                 ['name' => 'Haryana', 'short_code' => 'HAR'],

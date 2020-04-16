@@ -23,7 +23,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        dd('dg');
+        // dd('dg');
         return view('home');
+    }
+
+    public function admin()
+    {
+        // dd('admin');
+        return view('admin');
+    }
+
+    public function student()
+    {
+        dd('student');
+        return view('student');
+    }
+    public function teacher()
+    {
+        dd('student');
+        return view('teacher');
     }
 }
